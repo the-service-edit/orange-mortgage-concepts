@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Orange — Website concepts for review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f4f2ea;--ink:#23231f;--muted:#6b6a62;--rule:#c9c7bb;--orange:#f47b20;--mono:'IBM Plex Mono',ui-monospace,monospace}
+*{box-sizing:border-box;margin:0}
+body{background:var(--cream);color:var(--ink);font:400 16px/1.55 'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1360px;margin:0 auto;padding:32px 4% 64px}
+header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-bottom:28px;border-bottom:1px solid var(--rule)}
+header img{height:46px;width:auto;display:block}
+.label{font:11px/1.6 var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+header .label{text-align:right}
+.intro{display:grid;grid-template-columns:1.3fr 1fr;gap:10%;margin:64px 0 56px;align-items:end}
+h1{font-weight:400;font-size:clamp(40px,5.4vw,80px);line-height:1;letter-spacing:-.045em}
+.intro p{max-width:440px;color:#3d3c36}
+.intro p+p{margin-top:12px}
+.concepts{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.card{display:block}
+.shot{aspect-ratio:1440/1000;overflow:hidden;border:1px solid var(--rule);background:#dcdad0}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.card:hover .shot img{transform:scale(1.02)}
+.meta{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding-top:22px}
+h2{font-weight:400;font-size:clamp(28px,2.6vw,38px);letter-spacing:-.04em;line-height:1.05;margin-top:8px}
+.meta p{font-size:14px;color:#3d3c36;max-width:420px;margin-top:12px}
+.go{flex:none;display:inline-flex;align-items:center;gap:14px;background:var(--orange);color:var(--ink);font-size:14px;font-weight:500;padding:14px 22px;border-radius:999px;transition:background .2s}
+.card:hover .go{background:#ff8a33}
+.go svg{width:14px;height:14px}
+footer{margin-top:72px;padding-top:24px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+@media(max-width:860px){.intro{grid-template-columns:1fr;gap:24px;margin:40px 0 36px}.concepts{grid-template-columns:1fr;gap:48px}.meta{flex-direction:column}header .label{max-width:150px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="assets/logo.png" alt="Orange Mortgage &amp; Finance Brokers">
+    <p class="label">Homepage concepts<br>For review · not live</p>
+  </header>
+  <section class="intro">
+    <h1>Two directions<br>for the new site.</h1>
+    <div>
+      <p>Each concept is a complete, working homepage. Open both and scroll all the way down on desktop and on your phone.</p>
+      <p>Then tell us which one feels most like Orange, or which parts of each you'd keep.</p>
+    </div>
+  </section>
+  <section class="concepts" aria-label="Website concepts">
+    <a class="card" href="a/">
+      <div class="shot"><img src="assets/a.jpg" alt="Concept A homepage preview: Perth skyline with the headline Mortgage advice from North Perth" loading="lazy"></div>
+      <div class="meta">
+        <div>
+          <p class="label">Concept A / Immersive &amp; quiet</p>
+          <h2>Field of view</h2>
+          <p>One continuous Perth photograph carries the headline and navigation, then the page opens into calm, editorial spreads.</p>
+        </div>
+        <span class="go">View concept A <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11 11 3M4.5 3H11v6.5"/></svg></span>
+      </div>
+    </a>
+    <a class="card" href="c/">
+      <div class="shot"><img src="assets/c.jpg" alt="Concept C homepage preview: split layout with a Perth photograph on the left and the headline on the right" loading="lazy"></div>
+      <div class="meta">
+        <div>
+          <p class="label">Concept C / Spatial &amp; graphic</p>
+          <h2>Open house</h2>
+          <p>A fixed photographic window travels with six scrolling chapters, so place, property and your broker stay in view.</p>
+        </div>
+        <span class="go">View concept C <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11 11 3M4.5 3H11v6.5"/></svg></span>
+      </div>
+    </a>
+  </section>
+  <footer>
+    <p class="label">Prepared by The Service Edit</p>
+    <p class="label">Concepts may change before launch</p>
+  </footer>
+</div>
+</body>
+</html>
