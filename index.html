@@ -46,15 +46,12 @@ h2{font-size:clamp(34px,4.2vw,58px)}
 .compare-sec{padding:clamp(56px,7vw,96px) 0;border-top:1px solid var(--rule)}
 .sec-head{display:grid;grid-template-columns:1fr 1fr;gap:8%;align-items:end;margin-bottom:40px}
 .sec-head p{max-width:460px;color:#3a3933}
-.compare{position:relative;aspect-ratio:1431/840;border-radius:10px;overflow:hidden;box-shadow:0 30px 60px -30px #0006,0 0 0 1px #0001;background:#ddd;user-select:none;touch-action:pan-y}
-.compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
-.compare .after{clip-path:inset(0 0 0 var(--pos,50%))}
-.compare .handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:#fff;box-shadow:0 0 0 1px #0002;transform:translateX(-1px);pointer-events:none}
-.compare .handle::after{content:'‹ ›';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--orange);color:var(--ink);display:grid;place-items:center;font:500 18px/1 'DM Sans';letter-spacing:4px;box-shadow:0 6px 18px #0004}
-.compare .tag{position:absolute;top:16px;font:11px/1 var(--mono);text-transform:uppercase;letter-spacing:.05em;background:#000a;color:#fff;padding:8px 10px;border-radius:4px;pointer-events:none}
-.compare .tag.l{left:16px}.compare .tag.r{right:16px;background:var(--orange);color:var(--ink)}
-.compare input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
-.hint{margin-top:14px;text-align:center}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.pair figure{margin:0}
+.frame{border-radius:10px;overflow:hidden;box-shadow:0 24px 50px -28px #0006,0 0 0 1px #0001;background:#ddd;aspect-ratio:1431/840}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:top}
+.pair figcaption{display:flex;align-items:center;gap:10px;margin-top:14px;font:11px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--orange);flex:none}.dot.grey{background:#aaa79c}
 .findings{display:grid;grid-template-columns:repeat(3,1fr);gap:0 32px;margin-top:48px}
 .finding{border-top:1px solid var(--rule);padding-top:18px}
 .finding .n{font:11px var(--mono);color:var(--orange-deep)}
@@ -112,13 +109,12 @@ footer p{max-width:620px}
 
 @media(max-width:900px){
  .hero,.sec-head,.me{grid-template-columns:1fr;gap:26px}
- .findings,.why-grid,.steps,.cards{grid-template-columns:1fr;gap:28px}
+ .pair,.findings,.why-grid,.steps,.cards{grid-template-columns:1fr;gap:28px}
  .meta{flex-direction:column}
  .top .label{max-width:160px}
 }
 @media(max-width:600px){
  .hero .lead{font-size:16px}
- .compare .handle::after{width:42px;height:42px}
  .concept-bar{font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
@@ -141,7 +137,7 @@ footer p{max-width:620px}
       <p class="lead">You asked me to drop you a line after your break, so here it is, taken a step further: two complete homepage options, both built around your awards, your 387 five-star reviews and one clear way to get in touch.</p>
       <div class="actions">
         <a class="btn" href="#options">See the two options <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 2v10M2.5 7.5 7 12l4.5-4.5"/></svg></a>
-        <a class="link" href="#compare">Or compare with today</a>
+        <a class="link" href="#compare">Or see today vs Option 2</a>
       </div>
     </div>
   </section>
@@ -151,16 +147,12 @@ footer p{max-width:620px}
   <div class="wrap">
     <div class="sec-head">
       <div><p class="label">Today vs Option 2</p><h2>Same first screen. Very different first impression.</h2></div>
-      <p>Drag the slider. On the left is orangefinance.net.au as it loads today; on the right, Option 2 at the same size.</p>
+      <p>Your homepage as it loads today, next to Option 2 at exactly the same size.</p>
     </div>
-    <div class="compare" style="--pos:50%">
-      <img src="assets/before.jpg" alt="Orange Mortgage & Finance Brokers homepage today: a stock family photo with the headline Mortgage Broker Perth – Leading Home Loan & Mortgage Brokers Perth" width="1431" height="840">
-      <img class="after" src="assets/after-2.jpg" alt="Option 2 homepage: Perth skyline, the headline Mortgage advice from North Perth, a Speak with Laszlo button and his RateMyAgent awards" width="1431" height="840">
-      <div class="handle" aria-hidden="true"></div>
-      <span class="tag l">Today</span><span class="tag r">Option 2</span>
-      <input type="range" min="0" max="100" value="50" aria-label="Compare today's homepage with Option 2">
+    <div class="pair">
+      <figure><div class="frame"><img src="assets/before.jpg" alt="Orange Mortgage & Finance Brokers homepage today: a stock family photo with the headline Mortgage Broker Perth – Leading Home Loan & Mortgage Brokers Perth" width="1431" height="840"></div><figcaption><span class="dot grey"></span>Today · orangefinance.net.au</figcaption></figure>
+      <figure><div class="frame"><img src="assets/after-2.jpg" alt="Option 2 homepage: Perth skyline, the headline Mortgage advice from North Perth, a Speak with Laszlo button and his RateMyAgent awards" width="1431" height="840"></div><figcaption><span class="dot"></span>Option 2 · Open house</figcaption></figure>
     </div>
-    <p class="label hint">← drag to compare →</p>
 
     <div class="findings">
       <div class="finding"><span class="n">01 / Today</span><h3>The headline is written for Google, not for Perth home buyers.</h3><p>The first words a visitor reads are <q>Mortgage Broker Perth – Leading Home Loan &amp; Mortgage Brokers Perth</q>.</p></div>
@@ -240,9 +232,6 @@ footer p{max-width:620px}
   </footer>
 </div>
 
-<script>
-document.querySelectorAll('.compare').forEach(c=>{const r=c.querySelector('input');const set=v=>c.style.setProperty('--pos',v+'%');r.addEventListener('input',()=>set(r.value));set(r.value);});
-</script>
 <script data-goatcounter="https://theserviceedit.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
