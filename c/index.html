@@ -75,7 +75,7 @@
   .c-window{position:sticky;top:0;height:100vh;height:100lvh;z-index:0}
   .c-window>img{object-position:center 55%;transform:scale(1.06);transition:opacity .5s ease,transform 1.6s cubic-bezier(.2,.7,.2,1)}
   .c-window>img.is-visible{transform:scale(1)}
-  .c-window>img[data-image=skyline]{object-position:58% 50%}
+  .c-window>img[data-image=skyline]{height:46svh;bottom:auto;object-position:52% 60%}
   .c-window>img[data-image=broker]{width:48vw;height:60vw;inset:13svh auto auto 50%;transform:translateX(-50%) scale(1.04)}
   .c-window>img[data-image=broker].is-visible{transform:translateX(-50%)}
   .c-window-bottom{bottom:auto;top:calc(var(--m-gap) - 24px);transform:translateY(-100%);transition:opacity .3s ease}
@@ -112,7 +112,7 @@ function setScene(section){if(section===current)return;current=section;
  document.getElementById('scene-title').textContent=section.dataset.title;document.getElementById('scene-label').textContent=section.dataset.label;
  win.style.setProperty('--m-gap',getComputedStyle(section).getPropertyValue('--m-gap'));}
 function update(){ticking=false;if(!mq.matches)return;const vh=innerHeight;let active=chapters[0];
- for(const c of chapters){const gap=parseFloat(getComputedStyle(c).marginTop)||0;if(c.getBoundingClientRect().top-gap<vh*.85)active=c;}
+ for(const c of chapters){const gap=parseFloat(getComputedStyle(c).marginTop)||0;if(c.getBoundingClientRect().top-gap<vh)active=c;}
  setScene(active);}
 addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(update)}},{passive:true});
 addEventListener('resize',update);mq.addEventListener?.('change',()=>{current=null;update()});update();})();
