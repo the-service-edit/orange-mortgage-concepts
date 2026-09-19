@@ -4,79 +4,245 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Orange — Website options for review</title>
+<title>For Laszlo — Orange homepage options</title>
+<meta name="description" content="Two homepage options for Orange Mortgage & Finance Brokers, prepared by The Service Edit.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#f4f2ea;--ink:#23231f;--muted:#6b6a62;--rule:#c9c7bb;--orange:#f47b20;--mono:'IBM Plex Mono',ui-monospace,monospace}
+:root{--cream:#f4f2ea;--paper:#fbfaf6;--ink:#23231f;--muted:#5f5e56;--rule:#cfccc0;--orange:#f47b20;--orange-deep:#c95c0c;--dark:#262b23;--mono:'IBM Plex Mono',ui-monospace,monospace}
 *{box-sizing:border-box;margin:0}
-body{background:var(--cream);color:var(--ink);font:400 16px/1.55 'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:1360px;margin:0 auto;padding:32px 4% 64px}
-header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-bottom:28px;border-bottom:1px solid var(--rule)}
-header img{height:46px;width:auto;display:block}
-.label{font:11px/1.6 var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
-header .label{text-align:right}
-.intro{display:grid;grid-template-columns:1.3fr 1fr;gap:10%;margin:64px 0 56px;align-items:end}
-h1{font-weight:400;font-size:clamp(40px,5.4vw,80px);line-height:1;letter-spacing:-.045em}
-.intro p{max-width:440px;color:#3d3c36}
-.intro p+p{margin-top:12px}
-.concepts{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-.card{display:block}
-.shot{aspect-ratio:1440/1000;overflow:hidden;border:1px solid var(--rule);background:#dcdad0}
-.shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font:400 16px/1.6 'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1240px;margin:0 auto;padding:0 5%}
+.label{font:11px/1.6 var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+h1,h2,h3{font-weight:400;letter-spacing:-.045em;line-height:1.02}
+h2{font-size:clamp(34px,4.2vw,58px)}
+.btn{display:inline-flex;align-items:center;gap:14px;background:var(--orange);color:var(--ink);text-decoration:none;font-size:15px;font-weight:500;padding:15px 24px;border-radius:999px;transition:background .2s,transform .2s}
+.btn:hover{background:#ff8a33;transform:translateY(-1px)}
+.btn svg{width:14px;height:14px}
+.link{font-size:15px;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px}
+:focus-visible{outline:3px solid var(--orange-deep);outline-offset:4px}
+
+/* concept bar */
+.concept-bar{background:var(--dark);color:#e9e7de;font:11px/1.5 var(--mono);letter-spacing:.04em;text-transform:uppercase;text-align:center;padding:9px 16px}
+.concept-bar strong{color:var(--orange);font-weight:400}
+
+/* header */
+.top{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;border-bottom:1px solid var(--rule)}
+.top img{height:44px;width:auto}
+.top .label{text-align:right}
+
+/* hero */
+.hero{padding:clamp(56px,8vw,110px) 0 clamp(48px,6vw,80px);display:grid;grid-template-columns:1.35fr 1fr;gap:8%;align-items:end}
+.hero h1{font-size:clamp(40px,5.2vw,76px)}
+.hero h1 em{font-style:normal;color:var(--orange-deep)}
+.hero .lead{font-size:18px;line-height:1.55;color:#3a3933;max-width:440px}
+.hero .actions{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:30px}
+.hero .eyebrow{margin-bottom:26px}
+
+/* compare */
+.compare-sec{padding:clamp(56px,7vw,96px) 0;border-top:1px solid var(--rule)}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:8%;align-items:end;margin-bottom:40px}
+.sec-head p{max-width:460px;color:#3a3933}
+.compare{position:relative;aspect-ratio:1431/840;border-radius:10px;overflow:hidden;box-shadow:0 30px 60px -30px #0006,0 0 0 1px #0001;background:#ddd;user-select:none;touch-action:pan-y}
+.compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.compare .after{clip-path:inset(0 0 0 var(--pos,50%))}
+.compare .handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:#fff;box-shadow:0 0 0 1px #0002;transform:translateX(-1px);pointer-events:none}
+.compare .handle::after{content:'‹ ›';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--orange);color:var(--ink);display:grid;place-items:center;font:500 18px/1 'DM Sans';letter-spacing:4px;box-shadow:0 6px 18px #0004}
+.compare .tag{position:absolute;top:16px;font:11px/1 var(--mono);text-transform:uppercase;letter-spacing:.05em;background:#000a;color:#fff;padding:8px 10px;border-radius:4px;pointer-events:none}
+.compare .tag.l{left:16px}.compare .tag.r{right:16px;background:var(--orange);color:var(--ink)}
+.compare input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.hint{margin-top:14px;text-align:center}
+.findings{display:grid;grid-template-columns:repeat(3,1fr);gap:0 32px;margin-top:48px}
+.finding{border-top:1px solid var(--rule);padding-top:18px}
+.finding .n{font:11px var(--mono);color:var(--orange-deep)}
+.finding h3{font-size:22px;letter-spacing:-.03em;line-height:1.2;margin:10px 0 10px}
+.finding p{font-size:14px;color:#3a3933}
+.finding q{quotes:'“' '”'}
+
+/* why */
+.why{background:var(--dark);color:#efede4;padding:clamp(64px,8vw,110px) 0}
+.why .label{color:#b9bcaf}
+.why h2{max-width:720px;margin:14px 0 50px}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px}
+.why-item{border-top:1px solid #ffffff33;padding-top:22px}
+.why-item .n{font:11px var(--mono);color:var(--orange)}
+.why-item h3{font-size:26px;margin:12px 0}
+.why-item p{font-size:14px;color:#cfd0c6}
+
+/* options */
+.options{padding:clamp(64px,8vw,110px) 0}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:44px}
+.card{display:block;text-decoration:none}
+.shot{aspect-ratio:1431/840;overflow:hidden;border-radius:8px;box-shadow:0 0 0 1px #0001;background:#dcdad0}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
 .card:hover .shot img{transform:scale(1.02)}
 .meta{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding-top:22px}
-h2{font-weight:400;font-size:clamp(28px,2.6vw,38px);letter-spacing:-.04em;line-height:1.05;margin-top:8px}
-.meta p{font-size:14px;color:#3d3c36;max-width:420px;margin-top:12px}
-.go{flex:none;display:inline-flex;align-items:center;gap:14px;background:var(--orange);color:var(--ink);font-size:14px;font-weight:500;padding:14px 22px;border-radius:999px;transition:background .2s}
-.card:hover .go{background:#ff8a33}
-.go svg{width:14px;height:14px}
-footer{margin-top:72px;padding-top:24px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-@media(max-width:860px){.intro{grid-template-columns:1fr;gap:24px;margin:40px 0 36px}.concepts{grid-template-columns:1fr;gap:48px}.meta{flex-direction:column}header .label{max-width:150px}}
+.meta h3{font-size:clamp(28px,2.6vw,38px);margin-top:8px}
+.meta p{font-size:14px;color:#3a3933;max-width:420px;margin-top:10px}
+.meta .btn{flex:none}
+
+/* me */
+.me{border-top:1px solid var(--rule);padding:clamp(64px,8vw,100px) 0;display:grid;grid-template-columns:1fr 1.3fr;gap:8%}
+.me p{font-size:17px;max-width:560px;color:#3a3933}
+.me p+p{margin-top:16px}
+.me h2{margin-top:14px}
+
+/* steps */
+.steps-sec{background:var(--paper);border-block:1px solid var(--rule);padding:clamp(64px,8vw,100px) 0}
+.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0 32px;margin-top:44px;counter-reset:s}
+.steps li{border-top:2px solid var(--ink);padding-top:20px;counter-increment:s}
+.steps li::before{content:'0' counter(s);font:11px var(--mono);color:var(--orange-deep)}
+.steps h3{font-size:24px;margin:10px 0}
+.steps p{font-size:14px;color:#3a3933}
+.price{margin-top:40px;font-size:15px;display:flex;gap:12px;align-items:center}
+.price::before{content:'';width:10px;height:10px;border-radius:50%;background:var(--orange);flex:none}
+
+/* cta */
+.cta{padding:clamp(80px,10vw,140px) 0;text-align:center}
+.cta h2{font-size:clamp(40px,5.6vw,80px);max-width:900px;margin:16px auto 22px}
+.cta p{max-width:520px;margin:0 auto;color:#3a3933}
+.cta .btn{margin-top:34px;font-size:17px;padding:18px 30px}
+.cta .small{margin-top:22px;font-size:13px;color:var(--muted)}
+
+footer{border-top:1px solid var(--rule);padding:26px 0 40px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer p{max-width:620px}
+
+@media(max-width:900px){
+ .hero,.sec-head,.me{grid-template-columns:1fr;gap:26px}
+ .findings,.why-grid,.steps,.cards{grid-template-columns:1fr;gap:28px}
+ .meta{flex-direction:column}
+ .top .label{max-width:160px}
+}
+@media(max-width:600px){
+ .hero .lead{font-size:16px}
+ .compare .handle::after{width:42px;height:42px}
+ .concept-bar{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
+<div class="concept-bar">A concept by <strong>The Service Edit</strong> for Orange Mortgage &amp; Finance Brokers · not the live Orange website</div>
 <div class="wrap">
-  <header>
-    <img src="assets/logo.png" alt="Orange Mortgage &amp; Finance Brokers">
-    <p class="label">Homepage options<br>For review · not live</p>
+  <header class="top">
+    <img src="assets/logo.png" alt="Orange Mortgage &amp; Finance Brokers" width="712" height="260">
+    <p class="label">Prepared for<br>Laszlo Szollosi</p>
   </header>
-  <section class="intro">
-    <h1>Two options<br>for the new site.</h1>
+
+  <section class="hero">
     <div>
-      <p>Each option is a complete, working homepage. Open both and scroll all the way down on desktop and on your phone.</p>
-      <p>Then tell us which one feels most like Orange, or which parts of each you'd keep.</p>
+      <p class="label eyebrow">Homepage options · for Laszlo</p>
+      <h1>Two-time WA Broker of the Year. <em>Your homepage should open with that.</em></h1>
+    </div>
+    <div>
+      <p class="lead">You asked me to drop you a line after your break, so here it is, taken a step further: two complete homepage options, both built around your awards, your 387 five-star reviews and one clear way to get in touch.</p>
+      <div class="actions">
+        <a class="btn" href="#options">See the two options <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 2v10M2.5 7.5 7 12l4.5-4.5"/></svg></a>
+        <a class="link" href="#compare">Or compare with today</a>
+      </div>
     </div>
   </section>
-  <section class="concepts" aria-label="Website options">
-    <a class="card" href="option-1/">
-      <div class="shot"><img src="assets/a.jpg" alt="Option 1 homepage preview: Perth skyline with the headline Mortgage advice from North Perth" loading="lazy"></div>
-      <div class="meta">
-        <div>
-          <p class="label">Option 1 / Immersive &amp; quiet</p>
-          <h2>Field of view</h2>
-          <p>One continuous Perth photograph carries the headline and navigation, then the page opens into calm, editorial spreads.</p>
-        </div>
-        <span class="go">View option 1 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11 11 3M4.5 3H11v6.5"/></svg></span>
-      </div>
-    </a>
-    <a class="card" href="option-2/">
-      <div class="shot"><img src="assets/c.jpg" alt="Option 2 homepage preview: split layout with a Perth photograph on the left and the headline on the right" loading="lazy"></div>
-      <div class="meta">
-        <div>
-          <p class="label">Option 2 / Spatial &amp; graphic</p>
-          <h2>Open house</h2>
-          <p>A fixed photographic window travels with six scrolling chapters, so place, property and your broker stay in view.</p>
-        </div>
-        <span class="go">View option 2 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11 11 3M4.5 3H11v6.5"/></svg></span>
-      </div>
-    </a>
+</div>
+
+<section class="compare-sec" id="compare">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="label">Today vs Option 2</p><h2>Same first screen. Very different first impression.</h2></div>
+      <p>Drag the slider. On the left is orangefinance.net.au as it loads today; on the right, Option 2 at the same size.</p>
+    </div>
+    <div class="compare" style="--pos:50%">
+      <img src="assets/before.jpg" alt="Orange Mortgage & Finance Brokers homepage today: a stock family photo with the headline Mortgage Broker Perth – Leading Home Loan & Mortgage Brokers Perth" width="1431" height="840">
+      <img class="after" src="assets/after-2.jpg" alt="Option 2 homepage: Perth skyline, the headline Mortgage advice from North Perth, a Speak with Laszlo button and his RateMyAgent awards" width="1431" height="840">
+      <div class="handle" aria-hidden="true"></div>
+      <span class="tag l">Today</span><span class="tag r">Option 2</span>
+      <input type="range" min="0" max="100" value="50" aria-label="Compare today's homepage with Option 2">
+    </div>
+    <p class="label hint">← drag to compare →</p>
+
+    <div class="findings">
+      <div class="finding"><span class="n">01 / Today</span><h3>The headline is written for Google, not for Perth home buyers.</h3><p>The first words a visitor reads are <q>Mortgage Broker Perth – Leading Home Loan &amp; Mortgage Brokers Perth</q>.</p></div>
+      <div class="finding"><span class="n">02 / Today</span><h3>Your awards sit below the first screen.</h3><p>Two state titles and two national top 20 placings, and a visitor has to scroll to find them.</p></div>
+      <div class="finding"><span class="n">03 / Today</span><h3>Your number is hard to find.</h3><p>On desktop, your phone number first appears about three-quarters of the way down the homepage.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <p class="label">What changes, and why it matters</p>
+    <h2>Every change is aimed at one thing: more of the right people picking up the phone.</h2>
+    <div class="why-grid">
+      <div class="why-item"><span class="n">01</span><h3>Proof before the scroll</h3><p>People choosing a broker are deciding who to trust with a very large loan. Your awards and 5.0 rating from 387 reviews now do that work in the first few seconds.</p></div>
+      <div class="why-item"><span class="n">02</span><h3>One obvious next step</h3><p>“Speak with Laszlo” runs through the whole page and ends in a one-tap call on a phone. Nobody has to hunt for how to reach you.</p></div>
+      <div class="why-item"><span class="n">03</span><h3>Your lender panel, on show</h3><p>Fourteen banks and lenders in full colour, so “we work for you, not the bank” is something a visitor can see, not just read.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="options" id="options">
+  <div class="wrap">
+    <p class="label">The two options</p>
+    <h2>Both are complete, working homepages.</h2>
+    <p style="max-width:520px;margin-top:16px;color:#3a3933">Open each one and scroll all the way down, on your desktop and on your phone. Everything you click works.</p>
+    <div class="cards">
+      <a class="card" href="option-1/">
+        <div class="shot"><img src="assets/a.jpg" alt="Option 1 homepage preview: Perth skyline with the headline Mortgage advice from North Perth" loading="lazy" width="1440" height="1000"></div>
+        <div class="meta"><div><p class="label">Option 1 / Immersive &amp; quiet</p><h3>Field of view</h3><p>One continuous Perth photograph carries the headline, then the page opens into calm, editorial spreads.</p></div><span class="btn">View option 1 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 11 11 3M4.5 3H11v6.5"/></svg></span></div>
+      </a>
+      <a class="card" href="option-2/">
+        <div class="shot"><img src="assets/c.jpg" alt="Option 2 homepage preview: split layout with a Perth photograph on the left, the headline on the right and his RateMyAgent awards" loading="lazy" width="1431" height="840"></div>
+        <div class="meta"><div><p class="label">Option 2 / Spatial &amp; graphic</p><h3>Open house</h3><p>A fixed photographic window travels with six chapters. On a phone, each chapter opens on its own full-screen photo.</p></div><span class="btn">View option 2 <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 11 11 3M4.5 3H11v6.5"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="me">
+    <div><p class="label">Who's behind this</p><h2>Mel, The Service Edit.</h2></div>
+    <div>
+      <p>I'm Mel, founder of The Service Edit, based here in Perth. Before websites, I spent more than 20 years in hospitality and owned three cafés.</p>
+      <p>So I build websites the way an owner thinks about them: not whether they win design awards, but whether they make the phone ring. Yours already has the reputation to do that. It just needs to lead with it.</p>
+    </div>
   </section>
+</div>
+
+<section class="steps-sec">
+  <div class="wrap">
+    <p class="label">If one of these feels right</p>
+    <h2>Here's what happens next.</h2>
+    <ol class="steps">
+      <li><h3>A short chat</h3><p>Fifteen minutes. You pick an option and tell me what you'd change.</p></li>
+      <li><h3>I finish it</h3><p>Your content, photos and details go in, and you sign off on everything before it goes live.</p></li>
+      <li><h3>I switch it over</h3><p>I handle moving it onto orangefinance.net.au. You keep running the business.</p></li>
+    </ol>
+    <p class="price">One fixed price, agreed before any work starts.</p>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <p class="label">Next step</p>
+    <h2>Like what you see? Just reply to my email.</h2>
+    <p>Tell me which option you prefer, or what you'd change, and we'll find a time to chat.</p>
+    <a class="btn" href="mailto:hello@theserviceedit.com?subject=Re%3A%20WA%20Broker%20of%20the%20Year%20deserves%20a%20better%20homepage">Reply to Mel <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 11 11 3M4.5 3H11v6.5"/></svg></a>
+    <p class="small">Not for you? No reply needed. As I said in June, the ideas are yours to keep.</p>
+  </div>
+</section>
+
+<div class="wrap">
   <footer>
-    <p class="label">Prepared by The Service Edit</p>
-    <p class="label">Options may change before launch</p>
+    <p class="label">The Service Edit · Perth · hello@theserviceedit.com</p>
+    <p class="label">Concept only, not the live Orange website. Awards and reviews shown are Laszlo's, from RateMyAgent. The “today” screenshot was taken 19 September 2026.</p>
   </footer>
 </div>
+
+<script>
+document.querySelectorAll('.compare').forEach(c=>{const r=c.querySelector('input');const set=v=>c.style.setProperty('--pos',v+'%');r.addEventListener('input',()=>set(r.value));set(r.value);});
+</script>
+<script data-goatcounter="https://theserviceedit.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
